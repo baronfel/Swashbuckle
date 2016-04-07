@@ -75,7 +75,7 @@ namespace Swashbuckle.Swagger.XmlComments
                     var response = new Response
                     {
                         description = description,
-                        schema = statusCode.StartsWith("2") ? successResponse.schema : null
+                        schema = statusCode.StartsWith("2") && statusCode != "204" ? successResponse.schema : null
                     };
                     operation.responses[statusCode] = response;
                 }
